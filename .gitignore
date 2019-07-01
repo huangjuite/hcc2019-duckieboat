@@ -1,0 +1,15 @@
+.DS_Store
+.project
+.texlipse
+main_intro.*
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.aux
+*.log
+*.bak
+*.bbl
+*.blg
+*.out
+*.pdf
+
