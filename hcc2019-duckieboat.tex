@@ -95,10 +95,17 @@
 \pdfprotrudechars=2
 \pdfadjustspacing=2
 
+\makeatletter
+\def\endthebibliography{%
+  \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist
+}
+\makeatother
+
 \title{\LARGE \bf
 Duckieboat: 小型水上無人載具設計、開發與應用}
 
-\author{Jui-Te Huang$^{1}$, Shao-Huang Lu$^{2}$, and Tzu-Kuan Chuang$^{1}$}
+\author{Jui-Te Huang$^{1}$, Shao-Huang Lu$^{1}$, and Tzu-Kuan Chuang$^{1}$}
 
 \begin{document}
 %\begin{CJK}{UTF8}{bsmi}
@@ -118,12 +125,17 @@ Duckieboat: 小型水上無人載具設計、開發與應用}
 
     \input{02_design-strategy.tex}
 
-    \input{04_system-architecture.tex}
+    \input{03_system-architecture.tex}
 
-    %\input{05_experiments.tex}
+    \input{04_motor_control.tex}
 
-    %\input{06_conclusions.tex}
+    \input{05_navigation.tex}
 
+    \input{06_object_detection.tex}
+
+    \input{07_track_and_trail.tex}
+    
+    \input{08_conclusion.tex}
     %\addtolength{\textheight}{-12cm} % This command serves to balance the column lengths
     % on the last page of the document manually. It shortens
     % the textheight of the last page by a suitable amount.
@@ -135,12 +147,6 @@ Duckieboat: 小型水上無人載具設計、開發與應用}
     %\section*{APPENDIX}
 
     %Appendixes should appear before the acknowledgment.
-
-    \section*{ACKNOWLEDGMENT}
-
-    本研究感謝交大校長、副校長、機器人碩士學位學程、ICT工作坊、青年講座教授增能計畫、研發處學生出國競賽補助。台中中科管理局、工研院國際交流與國際競賽選手培訓計畫。
-    Dr. Michael Benjamin, Prof. Henrik Schmidt (MIT)支持學生移地訓練。
-    科技部國防科技計畫與中科院呂旺全先生於RobotX培訓課程機器人視覺演說，以及設備支持，最後感謝全體Team NCTU師生對本計畫的貢獻。
 
     %This work was partially
     %supported by the National Science Foundation under grants IIS-1318392 and
