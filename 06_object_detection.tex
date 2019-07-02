@@ -5,7 +5,7 @@
 In order to track the kayaker. We must have an real time object detection model. So we choose MobileNet SSD to be our object detection model.
 MobileNet separate the convolution process of traditional CNN models into depthwise convolution and pointwise convolution. Then combine the result later to achieve same effect of traditional convolution. But it can drastically reduce the computation.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \includegraphics[width=1\columnwidth]{images/mobilenetssd.png}
     \centering
     \caption{SSD model}
@@ -20,7 +20,7 @@ We use tensorflow object detection API to train the model. It has plenty of anal
 
 We use 1951 photos of kayaker pictured by onboard picamera on the bamboo lake. Inorder to train a more generalized model. We also try to add 136 photos of kayaker downloaded on google photo. We use labelImg(https://github.com/tzutalin/labelImg) to label the bounding box of the Kayaker.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \includegraphics[width=1\columnwidth]{images/kayaker.png}
     \centering
     \caption{kayaker image data}
@@ -38,7 +38,7 @@ We use GPU:RTX2070 trained for 52 minutes. With learning rate:$4e-3$, batch size
     \label{figure:training_loss}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \includegraphics[width=1\columnwidth]{images/eval_loss.png}
     \centering
     \caption{evaluation loss}
@@ -49,13 +49,13 @@ We use GPU:RTX2070 trained for 52 minutes. With learning rate:$4e-3$, batch size
 
 We use pr curve at iou=0.5 to analysis the model and compare the difference between pretrained model using COCO dataset boat class and our trained kayaker detection model. AP is improved from $77.09\%$ to $83.40\%$. 
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \includegraphics[width=1\columnwidth]{images/kayaker_pr.png}
     \centering
     \caption{left pic is pr curve of kayaker detection model, right pic is pretrained model}
     \label{figure:kayaker_pr}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[H]
     \includegraphics[width=1\columnwidth]{images/kayaker_dt.png}
     \centering
     \caption{detection result}
@@ -66,7 +66,7 @@ We use pr curve at iou=0.5 to analysis the model and compare the difference betw
 
 We also try to detect the garbage floating on the water surface. for future applications like garbage collecting.but the challenge is the reflecting light of the water surface and the size of the bottle make it difficult to detect.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \includegraphics[width=1\columnwidth]{images/bottle.png}
     \centering
     \caption{bottle detection}
@@ -74,7 +74,7 @@ We also try to detect the garbage floating on the water surface. for future appl
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \includegraphics[width=1\columnwidth]{images/bottle_pr.png}
     \centering
     \caption{bottle detection pr curve}
